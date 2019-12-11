@@ -20,10 +20,20 @@ master | 7.x -> master | lite      |
 
 编译安装
 --------
+
+
 1.编译打包 
+  修改构建依赖es版本 elasticsearch-thulac-plugin-master\build.gradle
+   version '7.2.0-181027'
+   compile 'org.elasticsearch:elasticsearch:7.2.0'
+   修改成自己的7.x版本
+ 修改插件描述elasticsearch-thulac-plugin\src\main\resources\plugin-descriptor.properties
+   version=7.2.0-181027
+   elasticsearch.version=7.2.0 
+   修改成自己的7.x版本
 
 ```bash
-git clone git@github.com:microbun/elasticsearch-thulac-plugin.git
+git clone git@github.com:qinjiying/elasticsearch-thulac-plugin.git
 cd elasticsearch-thulac-plugin
 ./gradlew release_full
 ```
