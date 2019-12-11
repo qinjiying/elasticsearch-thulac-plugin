@@ -1,12 +1,12 @@
 # THULAC Analysis for Elasticsearch 
 采用[THULAC](https://github.com/thunlp/THULAC-Java)实现的[Elasticsearch](https://www.elastic.co)中文分词插件。
-
+该版本在microbun的版本上做了版本微调，由于原版本停更，根据个人实际项目运用，结合7.x修改
 版本
 --------
 
 Plugin 版本 | ES 版本 | THULAC 版本 |  Link
 -----------|-----------|----------|------------
-master | 6.x -> master | lite      |
+master | 7.x -> master | lite      |
 6.4.1-181027 | 6.4.1          | lite      |[下载](https://github.com/microbun/elasticsearch-thulac-plugin/releases/download/6.4.1-181027/elasticsearch-thulac-plugin-6.4.1-181027.zip)
 6.4.0-181027 | 6.4.0          | lite      |[下载](https://github.com/microbun/elasticsearch-thulac-plugin/releases/download/6.4.0-181027/elasticsearch-thulac-plugin-6.4.0-181027.zip)
 6.3.0-181027 | 6.3.0          | lite      |[下载](https://github.com/microbun/elasticsearch-thulac-plugin/releases/download/6.3.0-181027/elasticsearch-thulac-plugin-6.3.0-181027.zip)
@@ -25,20 +25,20 @@ master | 6.x -> master | lite      |
 ```bash
 git clone git@github.com:microbun/elasticsearch-thulac-plugin.git
 cd elasticsearch-thulac-plugin
-./gradlew release
+./gradlew release_full
 ```
 
 2.安装到elasticsearch
 ```
-cp build/distributions/elasticsearch-thulac-plugin-6.1.0.zip ${ES_HOME}/plugins
+cp build/distributions/elasticsearch-thulac-plugin-7.*.*.zip ${ES_HOME}/plugins
 cd ${ES_HOME}/plugins
-unzip elasticsearch-thulac-plugin-6.1.0.zip
-rm elasticsearch-thulac-plugin-6.1.0.zip
+unzip elasticsearch-thulac-plugin-7.*.*.zip
+rm elasticsearch-thulac-plugin-7.*.*.zip
 ```
 解压后在plugins目录下会有一个thulac文件夹。
 ```
 thulac
- |-elasticsearch-thulac-plugin-6.1.0.jar
+ |-elasticsearch-thulac-plugin-7.*.*.jar
  |-models #算法模型目录
  |-plugin-descriptor.properties
  |-plugin.xml
